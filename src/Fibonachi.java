@@ -10,6 +10,20 @@ public class Fibonachi {
     }
 
     int f(int x) {
-        return x == 0 ? 0 : (x == 1 ? 1 : (f(x - 1) + f(x - 2)));
+
+        int[] num = new int[x + 1];
+
+        if (x == 0) return 0;
+        if (x == 1) return 1;
+
+        num[0] = 0;
+        num[1] = 1;
+
+        for (int i = 2; i <= x; i++) {
+            num[i] = num[i - 1] + num[i - 2];
+        }
+
+        return num[x];
     }
+
 }
